@@ -77,17 +77,13 @@ def quit_app():
     print("App closed.")
     root.destroy()
 
-# ========== GUI ========== #
-
 root = tk.Tk()
 root.title("To_Do_List")
 root.geometry("700x800")
-root.configure(bg="yellow")  # changed to yellow background
+root.configure(bg="yellow")
 
-# Title
 tk.Label(root, text="My To_Do List", font=("Verdana", 24, "bold"), fg="navy", bg="yellow").pack(pady=20)
 
-# Input section
 input_frame = tk.Frame(root, bg="yellow")
 input_frame.pack(pady=10)
 
@@ -96,7 +92,6 @@ task_input = tk.Entry(input_frame, font=("Calibri", 14), width=30)
 task_input.grid(row=0, column=1, padx=5)
 tk.Button(input_frame, text="Add", font=("Calibri", 14), bg="green", fg="white", command=add_task).grid(row=0, column=2, padx=5)
 
-# Task display
 display_frame = tk.Frame(root, bg="yellow")
 display_frame.pack(pady=10)
 
@@ -104,14 +99,12 @@ tk.Label(display_frame, text="Your tasks so far:", font=("Calibri", 16, "bold"),
 task_box = tk.Listbox(display_frame, width=50, height=10, font=("Segoe UI", 12))
 task_box.pack(pady=5)
 
-# View/Delete All Buttons
 action_frame = tk.Frame(root, bg="yellow")
 action_frame.pack(pady=10)
 
 tk.Button(action_frame, text="Show All", font=("Calibri", 12), bg="blue", fg="white", command=show_tasks).grid(row=0, column=0, padx=10)
 tk.Button(action_frame, text="Clear All", font=("Calibri", 12), bg="red", fg="white", command=remove_all).grid(row=0, column=1, padx=10)
 
-# Delete single task
 delete_frame = tk.Frame(root, bg="yellow")
 delete_frame.pack(pady=10)
 
@@ -120,7 +113,6 @@ delete_input = tk.Entry(delete_frame, font=("Calibri", 14), width=10)
 delete_input.grid(row=0, column=1, padx=5)
 tk.Button(delete_frame, text="Delete", font=("Calibri", 12), bg="red", fg="white", command=remove_task).grid(row=0, column=2, padx=5)
 
-# Update task
 update_frame = tk.Frame(root, bg="yellow")
 update_frame.pack(pady=10)
 
@@ -134,7 +126,6 @@ update_text_input.grid(row=0, column=3, padx=5)
 
 tk.Button(update_frame, text="Update", font=("Calibri", 12), bg="purple", fg="white", command=update_task).grid(row=0, column=4, padx=5)
 
-# Exit
 tk.Button(root, text="Close App", font=("Calibri", 12), bg="black", fg="white", command=quit_app).pack(pady=20)
 
 root.mainloop()
